@@ -23,17 +23,11 @@ export const render = (pictures) => {
     card.querySelector('.picture__comments').textContent = comments.length;
     fragment.append(card);
     card.dataset.id = id;
-    // card.addEventListener('click', () => {
-    //   openModal({url, description, likes, comments});
-    // });
-
-
   });
   containerNode.append(fragment);
 };
 
 containerNode.addEventListener('click', (evt) => {
-  evt.preventDefault();
   const card = evt.target.closest('.picture');
   if (card) {
     const id = Number(card.dataset.id);
